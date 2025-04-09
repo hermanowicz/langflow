@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:16
+    pull_policy: always
+    restart: always
+    environment:
+      POSTGRES_USER: langflow
+      POSTGRES_PASSWORD: super-pass
+      POSTGRES_DB: langflow
+    ports:
+      - "5432:5432"
+    volumes:
+      - langflow-postgres:/var/lib/postgresql/data
+
+volumes:
+  langflow-postgres: # Persistent volume for PostgreSQL data
