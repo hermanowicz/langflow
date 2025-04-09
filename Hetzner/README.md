@@ -15,6 +15,12 @@ but external data strore line NAS (Network Atached Storage) will be required to 
 
 Postgres is not a big problem there is normal connection over network used.
 
+### Generating cert
+
+```bash
+openssl req -newkey rsa:2048 -nodes -keyout private_key.pem -x509 -days 365 -out public_certificate.pem
+```
+
 ###
 
  > Hetzner setup:
