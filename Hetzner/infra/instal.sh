@@ -9,7 +9,7 @@ function sys_setup()
 
 function setup_packages()
 {
-    apt install -y nginx fail2ban build-essential docker.io
+    apt install -y nginx fail2ban build-essential docker.io docker-compose
     echo "setting up services..."
     systemctl enable nginx
     systemctl enable fail2ban
@@ -35,4 +35,5 @@ echo "starting server prep..."
 
 sys_setup
 setup_packages
+install_uv
 restart

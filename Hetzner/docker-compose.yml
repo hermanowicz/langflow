@@ -7,7 +7,14 @@ services:
     depends_on:
       - postgres
     environment:
-      - LANGFLOW_DATABASE_URL=postgresql://langflow:langflow@postgres:5432/langflow
+      - LANGFLOW_DATABASE_URL=postgresql://langflow:super-pass@postgres:5432/langflow
+      # Auto login disabled
+      - LANGFLOW_AUTO_LOGIN=False
+      - LANGFLOW_SUPERUSER=groot
+      - LANGFLOW_SUPERUSER_PASSWORD=super-pass
+      - LANGFLOW_NEW_USER_IS_ACTIVE=False
+      # generated with secrets.token_urlsafe(64)
+      - LANGFLOW_SECRET_KEY=uqwKaWopy345Sseg45W1PGQZeIpUUnwAKiThxnKctH9iLpm3Ml_zCSrlytjv8MbaVpemGmOgPznvMULGaJxOGw
       # This variable defines where the logs, file storage, monitor data, and secret keys are stored.
       - LANGFLOW_CONFIG_DIR=app/langflow
     volumes:
@@ -17,7 +24,7 @@ services:
     image: postgres:16
     environment:
       POSTGRES_USER: langflow
-      POSTGRES_PASSWORD: langflow
+      POSTGRES_PASSWORD: super-pass
       POSTGRES_DB: langflow
     ports:
       - "5432:5432"
