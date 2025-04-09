@@ -28,10 +28,4 @@ openssl req -newkey rsa:2048 -nodes -keyout private_key.pem -x509 -days 365 -out
 1. use lb to point traffic to instances.
 2. bind postgres container interface to vpc ip.
 3. run langflow from container
-4. setup caddy for https proxy ???
-
-> GCP
-
-> AWS
-
-> Azure
+4. I will use lb with self sign cert. (no -> setup caddy for https proxy)
