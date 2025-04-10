@@ -13,7 +13,7 @@ services:
       - LANGFLOW_SUPERUSER=groot
       - LANGFLOW_SUPERUSER_PASSWORD=super-pass
       - LANGFLOW_NEW_USER_IS_ACTIVE=False
-      # generated with secrets.token_urlsafe(64)
+      # generated with secrets.token_urlsafe(64), ps this will trigger gitgurdian alert.
       - LANGFLOW_SECRET_KEY=uqwKaWopy345Sseg45W1PGQZeIpUUnwAKiThxnKctH9iLpm3Ml_zCSrlytjv8MbaVpemGmOgPznvMULGaJxOGw
       # This variable defines where the logs, file storage, monitor data, and secret keys are stored.
       - LANGFLOW_CONFIG_DIR=app/langflow
